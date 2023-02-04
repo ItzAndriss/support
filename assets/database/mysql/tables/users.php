@@ -1,6 +1,9 @@
 <?php
+$prefix = "";
 if(!empty($_GET["prefix"])){
-  echo "CREATE TABLE IF NOT EXISTS `".$_GET["prefix"]."users` (
+  $prefix = $_GET["prefix"];
+}
+  echo "CREATE TABLE IF NOT EXISTS `".$prefix."users` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `username` varchar(255) NOT NULL,
     `email` varchar(255) NOT NULL,
@@ -10,5 +13,4 @@ if(!empty($_GET["prefix"])){
     PRIMARY KEY (`id`)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   COMMIT;"
- }
 ?>
